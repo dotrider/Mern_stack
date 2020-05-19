@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.header{
+    height: 15vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw;
+}
+
+.title {
+    padding-right: 20px;
+    color: $secondaryColor;
+    font-size: $large;
+}
