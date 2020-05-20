@@ -1,12 +1,14 @@
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 const { PORT_NUM, CONNECTION_DB} = process.env;
 const Ctr = require('./controller/controller')
 
 const app = express();
 
 //Middleware
+app.use(cors())
 app.use(express.json());
 
 
@@ -15,7 +17,7 @@ mongoose.connect(CONNECTION_DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false 
-}, () => console.log('Connected to DB'))
+}, () => console.log('Connected to DB'));
 
 
 //* FULL *
