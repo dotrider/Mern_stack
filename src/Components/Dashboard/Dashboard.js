@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Trails from '../Trails/Trails';
-import Form from '../Form/Form';
 import axios from 'axios';
+import './Dashboard.scss'
 
 
 const Dashboard = () => {
@@ -15,12 +15,6 @@ const Dashboard = () => {
         })
     }, [])
 
-    const addPost = (trail) => {
-        console.log('dashPost', trail)
-        axios.post('/api/trails', trail).then(res => {
-            setTrails(res.data)
-        })
-    }
 
     const deletePost = (_id) => {
         axios.delete(`/api/trails/${_id}`).then(res => {
@@ -31,8 +25,9 @@ const Dashboard = () => {
     const displayTrails = trails.map(trail => <Trails key={trail._id} trail={trail} deletePost={deletePost}/>)
     return(
         <div className='dashboard'>
-            {displayTrails}
-            <Form addPost={addPost}/>
+      
+                 {displayTrails}
+        
         </div>
     )
 }

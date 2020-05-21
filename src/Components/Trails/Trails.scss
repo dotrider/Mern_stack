@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+
+.form {
+    width: 400px;
+    height: 450px;
+    border: 1px solid $accentColor;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.trails > div > img {
+    width: 400px;
+    border-radius: 3px;
+}
+
+.trails > div > div{
+    padding: 20px 5px;
+}
+
+.trail-subheading {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 0;
+}
+
+.trail-info {
+    text-align: left;    
+}
+.trail-info > p {
+    padding: 10px 0;
+}
+
+.trail-innerContainer {
+    color: $secondaryColor;
+}
+span {
+    color: $accentColor;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}

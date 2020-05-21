@@ -16,10 +16,19 @@ module.exports = {
     },
 
     getTrails: async(req, res) => {
+        const { id } = req.params;
         console.log('hit')
+            
+        const trail = await Trails.findById(id);
         const trails = await Trails.find();
-        res.status(200).json(trails)
 
+        if(id){
+            console.log('single', trail)
+            res.status(200).json(trail)
+        }else{
+            console.log('all', trails)
+            res.status(200).json(trails)
+        }
     },
 
     deleteTrail: async(req, res) => {
@@ -33,7 +42,7 @@ module.exports = {
     updateTrail: async(req, res) => {
         const { name, location, difficulty, review, imageUrl } = req.body;
         const { id } = req.params;
-        console.log('update', req.body)
+        console.log('update', id, req.body)
 
         let updatedTrail = await Trails.findOneAndUpdate({_id: id},
              {$set: {name, location, difficulty, review, imageUrl}}, {new:true});

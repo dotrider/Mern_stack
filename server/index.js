@@ -24,7 +24,7 @@ mongoose.connect(CONNECTION_DB, {
 //** C **
 app.post('/api/trails', Ctr.addTrail);
 //** R **
-app.get('/api/trails', Ctr.getTrails);
+app.get('/api/trails/:id?', Ctr.getTrails);
 //** U **
 app.put('/api/trails/:id', Ctr.updateTrail);
 //** D **
